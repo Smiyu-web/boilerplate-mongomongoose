@@ -15,7 +15,7 @@ const personSchema = new Schema({
 });
 const Person = mongoose.model("Person", personSchema);
 
-let Person;
+// let Person;
 
 const createAndSavePerson = (done) => {
   done(null /*, data*/);
