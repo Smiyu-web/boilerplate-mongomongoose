@@ -17,16 +17,30 @@ const Person = mongoose.model("Person", personSchema);
 
 // let Person;
 
-const createAndSavePerson = (done) => {
-  var janeFonda = new Person({
-    name: "Jane Fonda",
-    age: 84,
-    favoriteFoods: ["eggs", "fish", "fresh fruit"],
+// const createAndSavePerson = (done) => {
+//   var janeFonda = new Person({
+//     name: "Jane Fonda",
+//     age: 84,
+//     favoriteFoods: ["eggs", "fish", "fresh fruit"],
+//   });
+
+//   janeFonda.save(function (err, data) {
+//     if (err) return console.error(err);
+//     done(null, data);
+//   });
+// };
+var createAndSavePerson = function () {
+  var person = new Person({
+    name: "John Doe",
+    age: 87,
+    favoriteFoods: ["something", "something"],
   });
 
-  janeFonda.save(function (err, data) {
-    if (err) return console.error(err);
-    done(null, data);
+  person.save(function (err, data) {
+    if (err) {
+      console.log(err);
+    }
+    console.log(data);
   });
 };
 
